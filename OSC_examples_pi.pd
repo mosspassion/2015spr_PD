@@ -1,0 +1,14 @@
+#N canvas 211 201 329 181 10;
+#X obj 208 30 dumpOSC 8001;
+#X obj 208 65 print;
+#X obj 25 147 sendOSC 8002;
+#X msg 26 30 connect 10.73.20.242 8002;
+#X msg 47 56 disconnect;
+#X msg 73 83 send Hello!;
+#X msg 91 110 send Goodbye!;
+#X text 21 4 connect to specific host (this is my macbook);
+#X connect 0 0 1 0;
+#X connect 3 0 2 0;
+#X connect 4 0 2 0;
+#X connect 5 0 2 0;
+#X connect 6 0 2 0;
