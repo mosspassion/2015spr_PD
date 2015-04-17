@@ -1,0 +1,58 @@
+#N canvas 542 46 590 440 10;
+#X obj 30 151 sendOSC 8000;
+#X msg 31 68 connect 127.0.0.1 8000;
+#X msg 186 68 disconnect;
+#X obj 266 150 sendOSC 8001;
+#X msg 284 97 disconnect;
+#X text 29 42 connect to local host;
+#X text 264 41 connect to specific host (this is my raspberry pi);
+#X text 27 313 UDP vs TCP -> Use UDP for simple messages because TCP/IP
+is specifically formatted for the internet. UDP is faster.;
+#X obj 387 192 print;
+#X text 384 132 coming from the pi;
+#X obj 392 273 r sam;
+#X msg 393 310 set \$1;
+#X msg 394 346 Goodbye.;
+#X msg 265 68 connect 10.72.26.104 8001;
+#X obj 386 151 dumpOSC 8002;
+#X obj 147 152 send sam;
+#X msg 174 103 send Hello!;
+#X msg 43 93 send Goodbye.;
+#X obj 28 183 cnv 15 350 120 empty empty empty 20 12 0 14 -204786 -66577
+0;
+#X text 36 187 only one [dumpOSC ([port #)] can exist at a time in
+one address!;
+#X obj 34 232 dumpOSC 8000;
+#X obj 34 267 print;
+#X obj 122 231 dumpOSC 8000;
+#X obj 122 266 print;
+#X obj 211 266 print;
+#X obj 211 231 dumpOSC 8001;
+#X obj 296 267 print;
+#X obj 296 232 dumpOSC 8001;
+#X obj 29 352 cnv 15 350 60 empty empty empty 20 12 0 14 -204786 -66577
+0;
+#X text 37 357 OSC must be capitalized in both [sendOSC] and [dumpOSC]
+;
+#X obj 231 388 sendosc;
+#X obj 319 389 dumposc;
+#X obj 28 10 cnv 15 300 30 empty empty empty 20 12 0 14 -261234 -66577
+0;
+#X text 51 15 Open Sound Control by Matt Wright @ CNMAT;
+#X connect 1 0 0 0;
+#X connect 2 0 0 0;
+#X connect 4 0 3 0;
+#X connect 10 0 11 0;
+#X connect 11 0 12 0;
+#X connect 13 0 3 0;
+#X connect 14 0 8 0;
+#X connect 16 0 0 0;
+#X connect 16 0 3 0;
+#X connect 16 0 15 0;
+#X connect 17 0 0 0;
+#X connect 17 0 3 0;
+#X connect 17 0 15 0;
+#X connect 20 0 21 0;
+#X connect 22 0 23 0;
+#X connect 25 0 24 0;
+#X connect 27 0 26 0;
